@@ -1,9 +1,9 @@
-<div class="container">
+<div class="wrapper__container">
 	<div class="wrapper">
 		<div class="content">
 			<span>MAKE</span>
 			<span>educative</span>
-			<div class="linear-text text-transparent bg-clip-text">TRIP</div>
+			<div class="linear-text bg-clip-text text-transparent">TRIP</div>
 			<div class="inline"><span>in</span> <span>SAINT PETERSBOURG</span></div>
 		</div>
 		<div class="actions">
@@ -17,31 +17,31 @@
 </div>
 
 <style>
-	.container {
+	.wrapper__container {
 		padding: 0 8vw;
 		display: flex;
 		align-items: center;
 		height: calc(max(90vh, 600px));
-        position: relative;
-        background: no-repeat center url('/previewBackgroundCenter.svg');
-        background-size: auto;
+		position: relative;
+		background: no-repeat center url('/previewBackgroundCenter.svg');
+		background-size: auto;
 	}
-    .container::before {
-        content: '';
-        position: absolute;
-        z-index: 2;
-        right: 0;
-        bottom: -7vh;
-        width: 50cqw;
-        height: 100%;
-        background: no-repeat right bottom url('/womanClimbingChairs.svg') ;
-        background-size: contain;
-    }
-	.container > .wrapper {
+	.wrapper__container::before {
+		content: '';
+		position: absolute;
+		z-index: 2;
+		right: 0;
+		bottom: -7vh;
+		width: 50cqw;
+		height: 100%;
+		background: no-repeat right bottom url('/womanClimbingChairs.svg');
+		background-size: contain;
+	}
+	.wrapper__container > .wrapper {
 		display: flex;
 		flex-direction: column;
 		gap: 50px;
-        z-index: 3;
+		z-index: 3;
 	}
 	.content > span {
 		display: block;

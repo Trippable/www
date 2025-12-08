@@ -1,4 +1,4 @@
-<div class="container">
+<div class="wrapper__container">
 	<div class="wrapper">
 		<h2>About Us</h2>
 
@@ -20,13 +20,13 @@
 </div>
 
 <style>
-	.container {
+	.wrapper__container {
 		background-image: url('/aboutUsBackgroundBottomRight.svg');
 		background-position: 100% -10%;
 		background-repeat: no-repeat;
 		position: relative;
 	}
-	.container::before {
+	.wrapper__container::before {
 		content: '';
 		position: absolute;
 		top: -30vh;
@@ -38,15 +38,15 @@
 		z-index: 1;
 	}
 
-    .container::after {
-        content: 'System.Console.WriteLine(‘about us’)';
+	.wrapper__container::after {
+		content: 'System.Console.WriteLine(‘about us’)';
 		position: absolute;
-        bottom: 35px;
+		bottom: 35px;
 		right: 40px;
-        font: 400 41.36px 'Pixelify';
-        color: rgba(0, 0, 0, 0.3);
+		font: 400 41.36px 'Pixelify';
+		color: rgba(0, 0, 0, 0.3);
 		z-index: 1;
-    }
+	}
 
 	.wrapper {
 		padding: 10vh 8vw;

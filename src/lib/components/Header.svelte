@@ -1,5 +1,5 @@
 <header>
-	<div class="header--container">
+	<div class="wrapper">
 		<div class="logo">
 			<img src="/logo.svg" alt="logo" />
 		</div>
@@ -13,7 +13,7 @@
 </header>
 
 <style>
-	.header--container {
+	.wrapper {
 		padding: 30px 40px;
 		font: 400 28.86px 'Pixelify';
 		display: flex;
