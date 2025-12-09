@@ -9,6 +9,7 @@
 					Infrastructure and core concept building. Planning and discuss solutions. Brainstorm.
 				</div>
 			</div>
+			<div class="art">&lt;- we are here</div>
 		</div>
 		<div class="step">
 			<div class="block">
@@ -17,12 +18,14 @@
 					Create a stable, functional, ready to stay face anything - computer machine.
 				</div>
 			</div>
+			<div class="art"></div>
 		</div>
 		<div class="step">
 			<div class="block">
 				<div class="title">3/ Feature enrichment</div>
 				<div class="description">Complete the system to create a MPV project.</div>
 			</div>
+			<div class="art"></div>
 		</div>
 		<div class="step">
 			<div class="block">
@@ -31,12 +34,16 @@
 					Take the project ready to production phase. Debug and optimize.
 				</div>
 			</div>
+			<div class="art"></div>
 		</div>
 		<div class="step">
 			<div class="block">
 				<div class="title">5/ Deploy</div>
-				<div class="description">Finalise & take the project high load ready. Born ITMO Trip.</div>
+				<div class="description">
+					Finalise &amp; take the project high load ready. Born ITMO Trip.
+				</div>
 			</div>
+			<div class="art"></div>
 		</div>
 	</div>
 </div>
@@ -46,7 +53,18 @@
 		background: #121212;
 		color: white;
 		padding: 15vh 2vw 8vh;
+        position: relative;
 	}
+
+    .wrapper::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 2vw;
+        width: calc(max(30cqw, 574px));
+        height: 127px;
+        background: no-repeat left top url('/development/developmentBackgroundTopLeft.svg');
+    }
 
 	h2 {
 		font: 400 126.92px 'Pixelify Sans';
@@ -62,6 +80,12 @@
 	.step {
 		padding-bottom: 250px;
 		position: relative;
+		display: flex;
+		gap: 60px;
+		align-items: center;
+	}
+	.step:nth-child(2n) {
+		flex-direction: row-reverse;
 	}
 
 	.step::after {
@@ -106,7 +130,6 @@
 	.step:nth-child(2n) .block {
 		padding-left: 140px;
 		padding-right: 40px;
-		margin-left: auto;
 	}
 
 	.step.active .block {
@@ -138,5 +161,41 @@
 
 	.step.active .block::after {
 		background-color: #9bff84;
+	}
+
+	.art {
+		font: 400 44px 'Pixelify';
+		position: relative;
+	}
+
+	.step:nth-child(2) .art::after,
+	.step:nth-child(3) .art::after,
+	.step:nth-child(4) .art::after,
+	.step:nth-child(5) .art::after {
+		content: '';
+		position: absolute;
+		top: calc(0px - max(20vh, 150px));
+		background-size: contain;
+		width: 30cqw;
+		height: calc(max(40vh, 300px));
+		background-repeat: no-repeat;
+        background-position: center;
+	}
+
+	.step:nth-child(2) .art::after {
+		right: 0;
+		background-image: url('/development/art-2.svg');
+	}
+	.step:nth-child(3) .art::after {
+		left: 0;
+		background-image: url('/development/art-3.svg');
+	}
+	.step:nth-child(4) .art::after {
+		right: 0;
+		background-image: url('/development/art-4.svg');
+	}
+	.step:nth-child(5) .art::after {
+		left: 0;
+		background-image: url('/development/art-5.svg');
 	}
 </style>
