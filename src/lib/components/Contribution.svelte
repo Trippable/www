@@ -14,7 +14,7 @@
 				</p>
 			</div>
 		</div>
-		<button><a href="https://t.me/axondee">reach us</a></button>
+		<button onclick={() => (location.href = 'https://t.me/axondee')}>reach us</button>
 	</div>
 </div>
 
