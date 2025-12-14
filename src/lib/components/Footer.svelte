@@ -41,6 +41,7 @@
 	}
 	.content > button {
 		cursor: pointer;
+		user-select: none;
 	}
 
 	@media (min-width: 1440px) {
