@@ -1,7 +1,11 @@
+<script>
+	import { asset } from '$app/paths';
+</script>
+
 <footer>
 	<div class="wrapper">
 		<div class="logo">
-			<img src="/logo.svg" alt="logo" />
+			<img src={asset('/logo.svg')} alt="logo" />
 		</div>
 
 		<div class="content">

@@ -1,3 +1,7 @@
+<script>
+    import { asset } from "$app/paths";
+</script>
+
 <div class="wrapper__container">
 	<div class="wrapper">
 		<div class="content">
@@ -8,7 +12,7 @@
 		</div>
 		<div class="actions">
 			<button class="codebase">
-				<img src="/github.svg" alt="github" />
+				<img src="{asset('/github.svg')}" alt="github" />
 				<span>our codebase</span>
 			</button>
 			<button class="waitlist">join waitlist</button>
