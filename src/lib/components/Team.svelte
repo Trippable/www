@@ -2,7 +2,7 @@
 	import { asset } from '$app/paths';
 </script>
 
-<div class="wrapper__container">
+<div class="wrapper__container" id="team">
 	<div class="wrapper">
 		<h2>Team</h2>
 

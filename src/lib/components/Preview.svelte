@@ -2,7 +2,7 @@
 	import { asset } from '$app/paths';
 </script>
 
-<div class="wrapper__container">
+<div class="wrapper__container" id="preview">
 	<div class="wrapper">
 		<div class="content">
 			<span>MAKE</span>
@@ -11,7 +11,7 @@
 			<div class="inline"><span>in</span> <span>SAINT PETERSBOURG</span></div>
 		</div>
 		<div class="actions">
-			<button class="codebase">
+			<button class="codebase" onclick={() => (location.href = 'https://github.com/trippable')}>
 				<div class="icon">
 					<img src={asset('/github.svg')} alt="github" />
 				</div>

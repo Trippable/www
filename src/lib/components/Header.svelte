@@ -2,16 +2,16 @@
 	import { asset } from '$app/paths';
 </script>
 
-<header>
+<header id="header">
 	<div class="wrapper">
 		<div class="logo">
 			<img src={asset('/logo.svg')} alt="logo" />
 		</div>
 		<div class="links">
-			<a href="#">About us</a>
-			<a href="#">Development</a>
-			<a href="#">Contribution</a>
-			<a href="#">Team</a>
+			<a href="#aboutUs">About us</a>
+			<a href="#development">Development</a>
+			<a href="#contribution">Contribution</a>
+			<a href="#team">Team</a>
 		</div>
 	</div>
 </header>

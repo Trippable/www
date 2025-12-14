@@ -1,4 +1,4 @@
-<div class="wrapper__container">
+<div class="wrapper__container" id="aboutUs">
 	<div class="wrapper">
 		<h2>About Us</h2>
 

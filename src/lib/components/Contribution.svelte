@@ -1,4 +1,4 @@
-<div class="wrapper__container">
+<div class="wrapper__container" id="contribution">
 	<div class="wrapper">
 		<h2>Contribution</h2>
 		<div class="text__wrapper">

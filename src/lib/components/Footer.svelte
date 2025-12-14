@@ -12,7 +12,7 @@
 		</div>
 
 		<div class="content">
-			<a href="#">go up</a>
+			<a href="#header">go up</a>
 			<button>
 				<CoolMode>detonate (don't click!)</CoolMode>
 			</button>

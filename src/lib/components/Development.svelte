@@ -22,7 +22,7 @@
 	});
 </script>
 
-<div class="wrapper__container">
+<div class="wrapper__container" id="development">
 	<div class="wrapper">
 		<h2 class="linear-text bg-clip-text text-transparent">Development</h2>
 
