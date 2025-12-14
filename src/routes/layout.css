@@ -34,6 +34,8 @@
 	--font-main: 400 24.57px 'SourceCode';
 
 	--color-primary: #161616;
+
+	--transition-timing-function: cubic-bezier(0.17, 0.67, 0.45, 1.15);
 }
 
 * {

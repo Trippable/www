@@ -1,5 +1,5 @@
 <script>
-    import { asset } from "$app/paths";
+	import { asset } from '$app/paths';
 </script>
 
 <div class="wrapper__container">
@@ -12,7 +12,7 @@
 		</div>
 		<div class="actions">
 			<button class="codebase">
-				<img src="{asset('/github.svg')}" alt="github" />
+				<img src={asset('/github.svg')} alt="github" />
 				<span>our codebase</span>
 			</button>
 			<button class="waitlist">join waitlist</button>
@@ -40,6 +40,7 @@
 		height: 100%;
 		background: no-repeat right bottom url('/womanClimbingChairs.svg');
 		background-size: contain;
+		transition: 0.8s var(--transition-timing-function);
 	}
 	.wrapper__container > .wrapper {
 		display: flex;
@@ -96,5 +97,23 @@
 	.actions button.waitlist {
 		border: 5px solid rgba(16, 16, 16, 0.2);
 		border-radius: 19px;
+	}
+
+	@media (min-width: 1440px) {
+		.wrapper__container {
+			display: flex;
+			justify-content: center;
+		}
+
+		.wrapper {
+			padding-right: 500px;
+		}
+	}
+
+	@media (max-width: 1300px) {
+		.wrapper__container::before {
+			width: 35cqw;
+			background-position: right center;
+		}
 	}
 </style>
