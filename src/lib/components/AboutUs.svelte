@@ -104,4 +104,41 @@
 	.text:nth-child(2) > mark {
 		background-color: rgba(255, 160, 193, 0.7);
 	}
+
+	@media (min-width: 1440px) {
+		.wrapper__container {
+			display: flex;
+			justify-content: center;
+		}
+		.wrapper {
+			width: 1440px;
+		}
+		.wrapper::before {
+			width: 600px;
+		}
+	}
+
+	@media (max-width: 1300px) {
+		h2 {
+			font-size: 100px;
+		}
+	}
+
+	@media (max-width: 1100px) {
+		.wrapper {
+			padding: 5vh 8vw;
+			padding-bottom: 15vh;
+		}
+		.wrapper::before {
+			right: -130px;
+			top: 0;
+		}
+		.wrapper::after {
+			width: 250px;
+			left: 20px;
+		}
+		.wrapper__container::after {
+			font-size: 30px;
+		}
+	}
 </style>

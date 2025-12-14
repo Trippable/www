@@ -46,6 +46,29 @@
 		flex-shrink: 1;
 	}
 
+	.links a {
+		position: relative;
+	}
+
+	.links a::after {
+		content: '';
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		width: 0;
+		border-bottom: dashed 3px var(--color-primary);
+		transition:
+			width 0.4s var(--transition-timing-function),
+			transform 0.3s var(--transition-timing-function);
+	}
+
+	.links a:hover::after {
+		width: calc(100%);
+	}
+	.links a:active {
+		transform: scale(0.9);
+	}
+
 	@media (min-width: 1440px) {
 		.links {
 			gap: 118.5px;
