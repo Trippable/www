@@ -12,7 +12,9 @@
 		</div>
 		<div class="actions">
 			<button class="codebase">
-				<img src={asset('/github.svg')} alt="github" />
+				<div class="icon">
+					<img src={asset('/github.svg')} alt="github" />
+				</div>
 				<span>our codebase</span>
 			</button>
 			<button class="waitlist">join waitlist</button>
@@ -88,20 +90,79 @@
 		font: 400 22px 'MonumentExtended';
 		cursor: pointer;
 	}
+
 	.actions button.codebase {
 		background: #161616;
 		color: white;
 		display: flex;
 		gap: 15px;
 		align-items: center;
+		overflow: hidden;
+		transition:
+			background-color 0.15s 0.05s cubic-bezier(0.11, 1.04, 0.76, 0.98),
+			transform 0.2s var(--transition-timing-function);
+		border: 5px solid transparent;
+	}
+	.actions button.codebase:hover {
+		background: #fff;
+		color: var(--color-primary);
+		border-color: var(--color-primary);
+	}
+	.actions button.codebase:active {
+		transform: scale(0.9);
 	}
 	.actions button.codebase span {
 		display: block;
 		height: fit-content;
+		position: relative;
+		z-index: 2;
+		transition: transform 0.2s var(--transition-timing-function);
+	}
+
+	.actions button.codebase:hover span {
+		transform: translateX(-30px);
+	}
+
+	.actions button.codebase .icon {
+		position: relative;
+	}
+	.actions button.codebase img {
+		transition: transform 0.3s cubic-bezier(0, 0.78, 0.76, 0.98);
+	}
+	.actions button.codebase:hover img {
+		opacity: 0;
+		transform: scale(1.7);
+	}
+	.actions button.codebase .icon::before {
+		content: '';
+		position: absolute;
+		width: 4px;
+		height: 4px;
+		background: white;
+		border-radius: 100%;
+		top: calc(50% - 3px);
+		left: calc(50% - 3px);
+		z-index: 0;
+		transform-origin: center;
+		transition: transform 0.3s cubic-bezier(0, 0.78, 0.76, 0.98);
+	}
+	.actions button.codebase:hover .icon::before {
+		transform: scale(100);
 	}
 	.actions button.waitlist {
 		border: 5px solid rgba(16, 16, 16, 0.2);
 		border-radius: 19px;
+		background-color: transparent;
+		transition:
+			background-color 0.35s cubic-bezier(0.11, 1.04, 0.76, 0.98),
+			transform 0.15s var(--transition-timing-function);
+	}
+	.actions button.waitlist:hover {
+		background-color: #ffc73c;
+		transform: scale(0.9);
+	}
+	.actions button.waitlist:active {
+		transform: scale(0.85);
 	}
 
 	@media (min-width: 1440px) {
