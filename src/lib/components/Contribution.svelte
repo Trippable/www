@@ -14,7 +14,7 @@
 				</p>
 			</div>
 		</div>
-		<button>reach us</button>
+		<button><a href="https://t.me/axondee">reach us</a></button>
 	</div>
 </div>
 
@@ -75,11 +75,24 @@
 
 	button {
 		font: 400 18px 'MonumentExtended';
-		background: #161616;
+		background-color: #161616;
 		padding: 18px 32px;
 		border-radius: 19px;
 		color: white;
 		cursor: pointer;
+		transition:
+			background-color 0.4s var(--transition-timing-function),
+			box-shadow 0.3s var(--transition-timing-function),
+			transform 0.2s var(--transition-timing-function);
+	}
+
+	button:hover {
+		background-color: #ff5c33;
+		box-shadow: 0px 0px 10px #ff5c33;
+	}
+
+	button:active {
+		transform: scale(0.9);
 	}
 
 	@media (min-width: 1440px) {
