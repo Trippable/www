@@ -1,27 +1,25 @@
-<div class="wrapper">
-	<h2>Contribution</h2>
-	<div class="text__wrapper">
-		<div class="header">We’re looking for ambitious and talented ITMO students.</div>
-		<div class="text">
-			<p>
-				Unfortunately, we don’t offer now an employment, but call you to take part of an immense
-				perspective project at ITMO.
-			</p>
-			<p>
-				Tell about this in your CV, develop our university, or just get so valuable experience -
-				your choice.
-			</p>
+<div class="wrapper__container">
+	<div class="wrapper">
+		<h2>Contribution</h2>
+		<div class="text__wrapper">
+			<div class="header">We’re looking for ambitious and talented ITMO students.</div>
+			<div class="text">
+				<p>
+					Unfortunately, we don’t offer now an employment, but call you to take part of an immense
+					perspective project at ITMO.
+				</p>
+				<p>
+					Tell about this in your CV, develop our university, or just get so valuable experience -
+					your choice.
+				</p>
+			</div>
 		</div>
+		<button>reach us</button>
 	</div>
-	<button>reach us</button>
 </div>
 
 <style>
-	.wrapper {
-		padding: 10vh 8vw;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+	.wrapper__container {
 		background-image:
 			url('/contribution/contributionLeftBackground.svg'),
 			url('/contribution/contributionTopRightBackground.svg');
@@ -33,14 +31,21 @@
 		position: relative;
 	}
 
-	.wrapper::before {
+	.wrapper__container::before {
 		content: '';
 		position: absolute;
-        background: no-repeat url('contribution/collaboration.svg');
-        width: calc(max(307px, 30cqw));
-        height: 96.1px;
-        top: 18px;
-        left: 3cqw;
+		background: no-repeat url('contribution/collaboration.svg');
+		width: calc(max(307px, 30cqw));
+		height: 96.1px;
+		top: 18px;
+		left: 3cqw;
+	}
+
+	.wrapper {
+		padding: 10vh 8vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	h2 {
@@ -75,5 +80,32 @@
 		border-radius: 19px;
 		color: white;
 		cursor: pointer;
+	}
+
+	@media (min-width: 1440px) {
+		.wrapper__container {
+			display: flex;
+			justify-content: center;
+		}
+		.wrapper {
+			width: 1440px;
+		}
+	}
+
+	@media (max-width: 1300px) {
+		.wrapper__container {
+			background-position:
+				left center,
+				right -50px top -130px;
+		}
+
+		h2 {
+			font-size: 100px;
+			margin-bottom: 50px;
+		}
+
+		.text__wrapper {
+			padding-bottom: 6vh;
+		}
 	}
 </style>
