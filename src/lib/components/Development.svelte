@@ -53,21 +53,21 @@
 		background: #121212;
 		color: white;
 		padding: 15vh 2vw 8vh;
-        position: relative;
+		position: relative;
 	}
 
-    .wrapper::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 2vw;
-        width: calc(max(30cqw, 574px));
-        height: 127px;
-        background: no-repeat left top url('/development/developmentBackgroundTopLeft.svg');
-    }
+	.wrapper::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 2vw;
+		width: calc(max(30cqw, 574px));
+		height: 127px;
+		background: no-repeat left top url('/development/developmentBackgroundTopLeft.svg');
+	}
 
 	h2 {
-		font: 400 126.92px 'Pixelify Sans';
+		font: 400 126.92px 'Pixelify';
 		background-image: linear-gradient(90deg, #ffffff 50.96%, #999999 100%);
 		width: fit-content;
 		margin-left: auto;
@@ -179,7 +179,7 @@
 		width: 30cqw;
 		height: calc(max(40vh, 300px));
 		background-repeat: no-repeat;
-        background-position: center;
+		background-position: center;
 	}
 
 	.step:nth-child(2) .art::after {

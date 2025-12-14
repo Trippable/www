@@ -1,4 +1,6 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import { asset } from '$app/paths';
+</script>
 
 <div class="wrapper">
 	<h2>Team</h2>
@@ -17,12 +19,12 @@
 	{/snippet}
 
 	<div class="team">
-		{@render member('Саша', ['Teamlid', 'Frontend'], '/members/alex.png', true)}
-		{@render member('Артем', ['Backend'], '/members/artyom.png')}
-		{@render member('Илья', ['Backend', 'Deploy'], '/members/iliya.png')}
-		{@render member('Ильяс', ['Designer'], '/members/iliyas.png')}
-		{@render member('Ксения', ['Frontend'], '/members/ksenia.png')}
-		{@render member('Эмилия', ['Backend'], '/members/emiliya.png')}
+		{@render member('Саша', ['Teamlid', 'Frontend'], asset('/members/alex.png'), true)}
+		{@render member('Артем', ['Backend'], asset('/members/artyom.png'))}
+		{@render member('Илья', ['Backend', 'Deploy'], asset('/members/iliya.png'))}
+		{@render member('Ильяс', ['Designer'], asset('/members/iliyas.png'))}
+		{@render member('Ксения', ['Frontend'], asset('/members/ksenia.png'))}
+		{@render member('Эмилия', ['Backend'], asset('/members/emiliya.png'))}
 	</div>
 </div>
 
