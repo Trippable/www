@@ -1,62 +1,71 @@
-<div class="wrapper">
-	<h2 class="linear-text bg-clip-text text-transparent">Development</h2>
+<script lang="ts">
+	$effect(() => {
+		var observedBlocks = document.querySelectorAll<Element>('.step.observed');
 
-	<div class="steps">
-		<div class="step active">
-			<div class="block">
-				<div class="title">1/ Architecture</div>
-				<div class="description">
-					Infrastructure and core concept building. Planning and discuss solutions. Brainstorm.
+		const callback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+			console.log(entries);
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('active');
+					observer.unobserve(entry.target);
+				}
+			});
+		};
+
+		const observer = new IntersectionObserver(callback);
+		console.log(observer);
+
+		observedBlocks.forEach((block) => observer.observe(block));
+
+		console.log('asdfasdf');
+		return () => observer.disconnect();
+	});
+</script>
+
+<div class="wrapper__container">
+	<div class="wrapper">
+		<h2 class="linear-text bg-clip-text text-transparent">Development</h2>
+
+		{#snippet block(title: string, description: string, isObserved = false, artText = '')}
+			<div class="step {isObserved ? 'observed' : ''}">
+				<div class="block">
+					<div class="title">{title}</div>
+					<div class="description">{description}</div>
 				</div>
+				<div class="art">{artText}</div>
 			</div>
-			<div class="art">&lt;- we are here</div>
-		</div>
-		<div class="step">
-			<div class="block">
-				<div class="title">2/ Core development</div>
-				<div class="description">
-					Create a stable, functional, ready to stay face anything - computer machine.
-				</div>
-			</div>
-			<div class="art"></div>
-		</div>
-		<div class="step">
-			<div class="block">
-				<div class="title">3/ Feature enrichment</div>
-				<div class="description">Complete the system to create a MPV project.</div>
-			</div>
-			<div class="art"></div>
-		</div>
-		<div class="step">
-			<div class="block">
-				<div class="title">4/ Beta testing</div>
-				<div class="description">
-					Take the project ready to production phase. Debug and optimize.
-				</div>
-			</div>
-			<div class="art"></div>
-		</div>
-		<div class="step">
-			<div class="block">
-				<div class="title">5/ Deploy</div>
-				<div class="description">
-					Finalise &amp; take the project high load ready. Born ITMO Trip.
-				</div>
-			</div>
-			<div class="art"></div>
+		{/snippet}
+
+		<div class="steps">
+			{@render block(
+				'1/ Architecture',
+				'Infrastructure and core concept building. Planning and discuss solutions. Brainstorm.',
+				true,
+				'<- we are here'
+			)}
+			{@render block(
+				'2/ Core development',
+				'Create a stable, functional, ready to stay face anything - computer machine.'
+			)}
+			{@render block('3/ Feature enrichment', 'Complete the system to create a MPV project.')}
+			{@render block(
+				'4/ Beta testing',
+				'Take the project ready to production phase. Debug and optimize.'
+			)}
+			{@render block('5/ Deploy', 'Finalise & take the project high load ready. Born ITMO Trip.')}
 		</div>
 	</div>
 </div>
 
 <style>
-	.wrapper {
+	.wrapper__container {
 		background: #121212;
 		color: white;
 		padding: 15vh 2vw 8vh;
 		position: relative;
 	}
 
-	.wrapper::before {
+	.wrapper__container::before {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -103,8 +112,12 @@
 		z-index: 1;
 	}
 
-	.step.active::after {
-		background: linear-gradient(180deg, rgba(44, 255, 0, 0.54) 30.45%, rgba(0, 0, 0, 0.432) 83.89%);
+	:global(.step.active::after) {
+		background-image: linear-gradient(
+			180deg,
+			rgba(44, 255, 0, 0.54) 30.45%,
+			rgba(0, 0, 0, 0.432) 83.89%
+		);
 	}
 
 	.step:last-child {
@@ -126,13 +139,18 @@
 		gap: 20px;
 		position: relative;
 		z-index: 2;
+		transition:
+			background 0.4s var(--transition-timing-function),
+			border 0.3s var(--transition-timing-function),
+			box-shadow 0.5s var(--transition-timing-function);
+		transition-delay: 0.8s, 0.8s, 0.8s;
 	}
 	.step:nth-child(2n) .block {
 		padding-left: 140px;
 		padding-right: 40px;
 	}
 
-	.step.active .block {
+	:global(.step.active .block) {
 		background: rgba(45, 136, 26, 0.54);
 		border: 5px solid #ffffff;
 		box-shadow: 0px 0px 50px #2cff00;
@@ -153,13 +171,15 @@
 		border: 5px solid #ffffff;
 		z-index: 2;
 		background-color: #121212;
+		transition: background-color 0.6s var(--transition-timing-function);
+		transition-delay: 0.8s;
 	}
 	.step:nth-child(2n) .block::after {
 		right: unset;
 		left: 34px;
 	}
 
-	.step.active .block::after {
+	:global(.step.active .block::after) {
 		background-color: #9bff84;
 	}
 
@@ -197,5 +217,42 @@
 	.step:nth-child(5) .art::after {
 		left: 0;
 		background-image: url('/development/art-5.svg');
+	}
+
+	@media (min-width: 1440px) {
+		.wrapper__container {
+			display: flex;
+			justify-content: center;
+		}
+
+		.wrapper {
+			width: 1440px;
+		}
+
+		.step:nth-child(2) .art::after,
+		.step:nth-child(3) .art::after,
+		.step:nth-child(4) .art::after,
+		.step:nth-child(5) .art::after {
+			max-width: 450px;
+			max-height: 450px;
+			top: -220px;
+		}
+	}
+
+	@media (max-width: 1300px) {
+		h2 {
+			font-size: 100px;
+		}
+
+		.steps {
+			margin-top: 10vh;
+		}
+
+		.block > .title {
+			font-size: 40px;
+		}
+		.block > .description {
+			font-size: 20px;
+		}
 	}
 </style>
