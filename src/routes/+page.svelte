@@ -25,13 +25,14 @@
 <Footer />
 
 <style>
-    :global(body) {
-        background: no-repeat top left url('/pageBackgroundTopLeft.svg');
-    }
+	:global(body) {
+		background: no-repeat top left url('/pageBackgroundTopLeft.svg');
+	}
 
 	.transition__previewAboutUs {
 		width: 100%;
 		height: 10px;
 		background: no-repeat url('/transitionPreviewAboutUs.svg');
+		background-size: cover;
 	}
 </style>

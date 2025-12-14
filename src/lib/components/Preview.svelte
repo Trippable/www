@@ -40,7 +40,7 @@
 		height: 100%;
 		background: no-repeat right bottom url('/womanClimbingChairs.svg');
 		background-size: contain;
-		transition: 0.8s var(--transition-timing-function);
+		transition: width 0.8s var(--transition-timing-function);
 	}
 	.wrapper__container > .wrapper {
 		display: flex;
@@ -50,6 +50,7 @@
 	}
 	.content > span {
 		display: block;
+		transition: font-size 0.5s var(--transition-timing-function);
 	}
 	.content > span:nth-child(1) {
 		font: 400 73.86px 'MonumentExtended';
@@ -66,6 +67,10 @@
 		background-color: #fff;
 		width: fit-content;
 		line-height: 170px;
+
+		transition:
+			font-size 0.6s var(--transition-timing-function),
+			margin 0.6s 0.3s var(--transition-timing-function);
 	}
 	.inline > span:nth-child(1) {
 		font: 400 37.95px 'Pixelify';
@@ -114,6 +119,40 @@
 		.wrapper__container::before {
 			width: 35cqw;
 			background-position: right center;
+		}
+	}
+
+	@media (max-width: 1100px) {
+		.wrapper__container > .wrapper {
+			gap: 30px;
+		}
+
+		.content > span:nth-child(1) {
+			font-size: 48px;
+		}
+		.content > span:nth-child(2) {
+			font-size: 76px;
+		}
+		.linear-text {
+			font-size: 145px;
+			margin: -20px 0;
+		}
+
+		.inline > span:nth-child(1) {
+			font-size: 27px;
+		}
+		.inline > span:nth-child(2) {
+			font-size: 27px;
+		}
+
+		.actions button {
+			padding: 10px 27px;
+			border-radius: 14px;
+			font-size: 15px;
+		}
+		.actions button.codebase > img {
+			width: 40px;
+			height: 40px;
 		}
 	}
 </style>
