@@ -24,6 +24,11 @@
 	src: url('/fonts/SourceCode/SourceCode-Regular.ttf') format('truetype');
 	font-weight: 400;
 }
+@font-face {
+	font-family: 'SourceCode';
+	src: url('/fonts/SourceCode/SourceCode-Black.ttf') format('truetype');
+	font-weight: 900;
+}
 
 :root {
 	--font-main: 400 24.57px 'SourceCode';
