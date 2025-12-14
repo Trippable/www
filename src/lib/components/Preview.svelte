@@ -159,7 +159,6 @@
 	}
 	.actions button.waitlist:hover {
 		background-color: #ffc73c;
-		transform: scale(0.9);
 	}
 	.actions button.waitlist:active {
 		transform: scale(0.85);
@@ -211,9 +210,9 @@
 			border-radius: 14px;
 			font-size: 15px;
 		}
-		.actions button.codebase > img {
-			width: 40px;
-			height: 40px;
+		.actions button.codebase img {
+			width: 35px;
+			height: 35px;
 		}
 	}
 </style>
