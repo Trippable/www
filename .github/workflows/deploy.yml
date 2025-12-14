@@ -8,6 +8,11 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    permissions:
+      pages: write
+      id-token: write
+      contents: write
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4

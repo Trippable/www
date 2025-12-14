@@ -12,7 +12,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		paths: {
-			base: dev ? '' : '/trippable/www'
+			base: dev ? '' : '/www'
 		},
 		appDir: '_app'
 	}
