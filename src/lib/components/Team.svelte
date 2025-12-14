@@ -2,36 +2,36 @@
 	import { asset } from '$app/paths';
 </script>
 
-<div class="wrapper">
-	<h2>Team</h2>
+<div class="wrapper__container">
+	<div class="wrapper">
+		<h2>Team</h2>
 
-	{#snippet member(name: string, tags: string[], photo: string, isCaptain = false)}
-		<div class="member {isCaptain ? 'captain' : ''}" style="background-image: url({photo});">
-			<div class="info">
-				<div class="name">{name}</div>
-				<div class="tags">
-					{#each tags as tag (tag)}
-						<div class="tag tag-{tag.toLowerCase()}">{tag}</div>
-					{/each}
+		{#snippet member(name: string, tags: string[], photo: string, isCaptain = false)}
+			<div class="member {isCaptain ? 'captain' : ''}" style="background-image: url({photo});">
+				<div class="info">
+					<div class="name">{name}</div>
+					<div class="tags">
+						{#each tags as tag (tag)}
+							<div class="tag tag-{tag.toLowerCase()}">{tag}</div>
+						{/each}
+					</div>
 				</div>
 			</div>
-		</div>
-	{/snippet}
+		{/snippet}
 
-	<div class="team">
-		{@render member('Саша', ['Teamlid', 'Frontend'], asset('/members/alex.png'), true)}
-		{@render member('Артем', ['Backend'], asset('/members/artyom.png'))}
-		{@render member('Илья', ['Backend', 'Deploy'], asset('/members/iliya.png'))}
-		{@render member('Ильяс', ['Designer'], asset('/members/iliyas.png'))}
-		{@render member('Ксения', ['Frontend'], asset('/members/ksenia.png'))}
-		{@render member('Эмилия', ['Backend'], asset('/members/emiliya.png'))}
+		<div class="team">
+			{@render member('Саша', ['Teamlid', 'Frontend'], asset('/members/alex.png'), true)}
+			{@render member('Артем', ['Backend'], asset('/members/artyom.png'))}
+			{@render member('Илья', ['Backend', 'Deploy'], asset('/members/iliya.png'))}
+			{@render member('Ильяс', ['Designer'], asset('/members/iliyas.png'))}
+			{@render member('Ксения', ['Frontend'], asset('/members/ksenia.png'))}
+			{@render member('Эмилия', ['Backend'], asset('/members/emiliya.png'))}
+		</div>
 	</div>
 </div>
 
 <style>
-	.wrapper {
-		padding: 20vh 8vw 15vh;
-		background: linear-gradient(141.12deg, rgba(255, 160, 193, 0.3) -3.01%, #ffffff 71.54%);
+	.wrapper__container {
 		background-repeat: no-repeat, no-repeat;
 		background-position:
 			top left,
@@ -42,7 +42,7 @@
 		position: relative;
 	}
 
-	.wrapper::before {
+	.wrapper__container::before {
 		content: url('/team/blobRightBottom.svg');
 		position: absolute;
 		bottom: 0;
@@ -50,13 +50,17 @@
 		height: 216px;
 	}
 
-	.wrapper::after {
+	.wrapper__container::after {
 		content: 'list.append<string>(‘Kitty’);';
 		font: 400 84.7px 'Pixelify';
 		color: rgba(32, 32, 32, 0.2);
 		position: absolute;
 		bottom: 0;
 		left: 2vw;
+	}
+
+	.wrapper {
+		padding: 20vh 8vw 15vh;
 	}
 
 	h2 {
@@ -164,5 +168,29 @@
 	}
 	.tag.tag-designer {
 		background-color: #2d881a;
+	}
+
+	@media (min-width: 1440px) {
+		.wrapper__container {
+			display: flex;
+			justify-content: center;
+		}
+		.wrapper {
+			width: 1440px;
+		}
+	}
+
+	@media (max-width: 1300px) {
+		.wrapper__container {
+			background-position:
+				top -20px left -10px,
+				top -100px right -300px;
+		}
+		.wrapper {
+			padding: 10vh 8vw 15vh;
+		}
+		.team {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 </style>
