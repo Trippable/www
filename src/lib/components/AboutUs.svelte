@@ -5,7 +5,7 @@
 		<div class="text__container">
 			<div class="text">
 				<mark>
-					We’re a young software command located in Saint Petersbourg. Motivated, creative and
+					We’re a young software command located in Saint Petersburg. Motivated, creative and
 					furious.
 				</mark>
 			</div>
