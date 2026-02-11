@@ -8,7 +8,7 @@
 			<span>MAKE</span>
 			<span>educative</span>
 			<div class="linear-text bg-clip-text text-transparent">TRIP</div>
-			<div class="inline"><span>in</span> <span>SAINT PETERSBOURG</span></div>
+			<div class="inline"><span>in</span> <span>SAINT PETERSBURG</span></div>
 		</div>
 		<div class="actions">
 			<button class="codebase" onclick={() => (location.href = 'https://github.com/trippable')}>
