@@ -20,12 +20,11 @@
 		{/snippet}
 
 		<div class="team">
-			{@render member('Саша', ['Teamlid', 'Frontend'], asset('/members/alex.png'), true)}
-			{@render member('Артем', ['Backend'], asset('/members/artyom.png'))}
-			{@render member('Илья', ['Backend', 'Deploy'], asset('/members/iliya.png'))}
-			{@render member('Ильяс', ['Designer'], asset('/members/iliyas.png'))}
-			{@render member('Ксения', ['Frontend'], asset('/members/ksenia.png'))}
-			{@render member('Эмилия', ['Backend'], asset('/members/emiliya.png'))}
+			{@render member('Сашка', ['Teamlid', 'Frontend'], asset('/members/alex.png'), true)}
+			{@render member('Артём', ['Backend', 'Frontend'], asset('/members/artyom-o.png'))}
+			{@render member('Илья', ['Deploy'], asset('/members/iliya.png'))}
+			{@render member('Лёня', ['Backend', 'Database'], asset('/members/lenya.jpeg'))}
+			{@render member('Тёмыч', ['Architect'], asset('/members/artyom-s.jpeg'))}
 		</div>
 	</div>
 </div>
@@ -168,6 +167,12 @@
 	}
 	.tag.tag-designer {
 		background-color: #2d881a;
+	}
+	.tag.tag-architect {
+		background-color: #000;
+	}
+	.tag.tag-database {
+		background-color: #a80c0c;
 	}
 
 	@media (min-width: 1440px) {
