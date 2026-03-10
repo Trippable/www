@@ -172,7 +172,8 @@
 		background-color: #000;
 	}
 	.tag.tag-database {
-		background-color: #a80c0c;
+		background-color: #f2efff;
+		color: #1f1f1f;
 	}
 
 	@media (min-width: 1440px) {
