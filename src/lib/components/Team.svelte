@@ -150,7 +150,7 @@
 		border-radius: 5px;
 	}
 
-	.tag.tag-teamlid {
+	.tag.tag-teamlead {
 		background-color: #ff5c33;
 	}
 	.tag.tag-frontend {
