@@ -20,7 +20,7 @@
 		{/snippet}
 
 		<div class="team">
-			{@render member('Сашка', ['Teamlid', 'Frontend'], asset('/members/alex.png'), true)}
+			{@render member('Сашка', ['Teamlead', 'Frontend'], asset('/members/alex.png'), true)}
 			{@render member('Артём', ['Backend', 'Frontend'], asset('/members/artyom-o.png'))}
 			{@render member('Илья', ['Deploy'], asset('/members/iliya.png'))}
 			{@render member('Лёня', ['Backend', 'Database'], asset('/members/lenya.jpeg'))}
