@@ -1,0 +1,55 @@
+# ─────────────────────────────────────────────────────────────
+#  Конфиг команды для секции «Team».
+#  Редактируется руками, парсится на этапе сборки (см. vite.config.ts).
+#
+#  • palette  — цвета акцентов карточек (тень + выезжающая плашка).
+#               Карточкам без своего `accent` цвет назначается по кругу.
+#  • Иконки стека: слаги с https://icon-sets.iconify.design
+#               в формате "набор:имя", напр. "devicon:flutter", "logos:figma".
+#  • Пустые / отсутствующие about, stack, reachMe → блок не показывается.
+#  • isCaptain = true → сердечко в углу плашки имени.
+# ─────────────────────────────────────────────────────────────
+
+palette = ["#ffa0c1", "#ffc73c", "#2d881a", "#77a1dd", "#ff5c33", "#cc6eff"]
+
+[[members]]
+name = "Сашка"
+tags = ["Teamlead", "Frontend"]
+photo = "/members/alex.png"
+isCaptain = true
+about = "TODO: пара слов о себе."
+stack = ["devicon:svelte", "devicon:typescript", "devicon:figma"]
+reachMe = "https://t.me/"
+# accent = "#ffa0c1"   # необязательно: переопределить цвет карточки
+
+[[members]]
+name = "Артём"
+tags = ["Backend", "Frontend"]
+photo = "/members/artyom-o.png"
+about = "Играю в шахматы, пью пиво. Евелина — люблю тебя!"
+stack = ["devicon:flutter", "devicon:dart", "devicon:figma", "devicon:firebase"]
+reachMe = "https://t.me/"
+
+[[members]]
+name = "Илья"
+tags = ["Deploy"]
+photo = "/members/iliya.png"
+about = "TODO: пара слов о себе."
+stack = ["devicon:docker", "devicon:nginx", "devicon:linux"]
+reachMe = "https://t.me/"
+
+[[members]]
+name = "Лёня"
+tags = ["Backend", "Database"]
+photo = "/members/lenya.jpeg"
+about = "TODO: пара слов о себе."
+stack = ["devicon:postgresql", "devicon:python", "devicon:redis"]
+reachMe = "https://t.me/"
+
+[[members]]
+name = "Тёмыч"
+tags = ["Architect"]
+photo = "/members/artyom-s.jpeg"
+about = "TODO: пара слов о себе."
+stack = ["devicon:go", "devicon:kubernetes", "devicon:grafana"]
+reachMe = "https://t.me/"

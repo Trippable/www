@@ -1,30 +1,42 @@
 <script lang="ts">
 	import { asset } from '$app/paths';
+	import MemberCard from './MemberCard.svelte';
+	import config from '$lib/data/members.toml';
+
+	type Member = {
+		name: string;
+		tags?: string[];
+		photo: string;
+		isCaptain?: boolean;
+		about?: string;
+		stack?: string[];
+		reachMe?: string;
+		/** Необязательный персональный акцент; иначе берётся из palette по кругу. */
+		accent?: string;
+	};
+	type TeamConfig = { palette: string[]; members: Member[] };
+
+	// Данные команды живут в src/lib/data/members.toml и парсятся при сборке.
+	const { palette, members } = config as TeamConfig;
 </script>
 
 <div class="wrapper__container" id="team">
 	<div class="wrapper">
 		<h2>Team</h2>
 
-		{#snippet member(name: string, tags: string[], photo: string, isCaptain = false)}
-			<div class="member {isCaptain ? 'captain' : ''}" style="background-image: url({photo});">
-				<div class="info">
-					<div class="name">{name}</div>
-					<div class="tags">
-						{#each tags as tag (tag)}
-							<div class="tag tag-{tag.toLowerCase()}">{tag}</div>
-						{/each}
-					</div>
-				</div>
-			</div>
-		{/snippet}
-
 		<div class="team">
-			{@render member('Сашка', ['Teamlead', 'Frontend'], asset('/members/alex.png'), true)}
-			{@render member('Артём', ['Backend', 'Frontend'], asset('/members/artyom-o.png'))}
-			{@render member('Илья', ['Deploy'], asset('/members/iliya.png'))}
-			{@render member('Лёня', ['Backend', 'Database'], asset('/members/lenya.jpeg'))}
-			{@render member('Тёмыч', ['Architect'], asset('/members/artyom-s.jpeg'))}
+			{#each members as member, i (member.name)}
+				<MemberCard
+					name={member.name}
+					tags={member.tags}
+					photo={asset(member.photo)}
+					accent={member.accent ?? palette[i % palette.length]}
+					isCaptain={member.isCaptain}
+					about={member.about}
+					stack={member.stack}
+					reachMe={member.reachMe}
+				/>
+			{/each}
 		</div>
 	</div>
 </div>
@@ -74,106 +86,6 @@
 		column-gap: 30px;
 		row-gap: 30px;
 		padding: 50px 0;
-	}
-
-	.member {
-		width: 350px;
-		height: 440px;
-		border: solid 2px #fff;
-		border-radius: 18px;
-		box-shadow: 10px 10px #000;
-		padding: 30px 10px;
-		display: flex;
-		flex-direction: column-reverse;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-	}
-
-	.member:nth-child(6n - 5) {
-		box-shadow: 15px 15px rgba(255, 160, 193, 0.3);
-	}
-	.member:nth-child(6n - 4) {
-		box-shadow: 15px 15px rgba(255, 199, 60, 0.3);
-	}
-	.member:nth-child(6n - 3) {
-		box-shadow: 15px 15px rgba(45, 136, 26, 0.3);
-	}
-	.member:nth-child(6n - 2) {
-		box-shadow: 15px 15px rgba(119, 161, 221, 0.3);
-	}
-	.member:nth-child(6n - 1) {
-		box-shadow: 15px 15px rgba(255, 92, 51, 0.3);
-	}
-	.member:nth-child(6n) {
-		box-shadow: 15px 15px rgba(204, 110, 255, 0.3);
-	}
-
-	.info {
-		padding: 15px 25px;
-		border-radius: 23px;
-		backdrop-filter: blur(3px);
-		background-color: rgba(0, 0, 0, 0.01);
-		-webkit-backdrop-filter: blur(3px);
-		display: flex;
-		gap: 20px;
-		box-shadow:
-			0.5px 0.5px #fff,
-			-0.5px -0.5px #fff;
-		position: relative;
-	}
-
-	.member.captain .info::after {
-		content: url('/heart.svg');
-		position: absolute;
-		top: -3px;
-		left: -2px;
-	}
-
-	.info > .name {
-		font-weight: 900;
-		font-size: 24px;
-		text-transform: uppercase;
-		color: white;
-	}
-
-	.tags {
-		display: flex;
-		gap: 10px;
-	}
-
-	.tags > div {
-		font: 400 16px 'Pixelify';
-		color: white;
-		background-color: grey;
-		padding: 5px 10px;
-		border-radius: 5px;
-	}
-
-	.tag.tag-teamlead {
-		background-color: #ff5c33;
-	}
-	.tag.tag-frontend {
-		background-color: #77a1dd;
-		color: #1f1f1f;
-	}
-	.tag.tag-backend {
-		background-color: #cc6eff;
-		color: #1f1f1f;
-	}
-	.tag.tag-deploy {
-		background-color: #ffc73c;
-		color: #1f1f1f;
-	}
-	.tag.tag-designer {
-		background-color: #2d881a;
-	}
-	.tag.tag-architect {
-		background-color: #000;
-	}
-	.tag.tag-database {
-		background-color: #f2efff;
-		color: #1f1f1f;
 	}
 
 	@media (min-width: 1440px) {
