@@ -235,8 +235,8 @@
 	/* ── Кнопка reach me + пиксельное замостение ─────── */
 	.reach {
 		/* Два едва различимых «чёрных» — мозаика тонкая, не лезет в глаза */
-		--px-1: #242424;
-		--px-2: #2f2f2f;
+		--px-1: #303030;
+		--px-2: #212121;
 
 		position: relative;
 		overflow: hidden;
@@ -346,6 +346,10 @@
 	.tag-frontend {
 		background-color: #77a1dd;
 		color: #1f1f1f;
+	}
+	.tag-flutter {
+		background-color: #003465;
+		color: #fff;
 	}
 	.tag-backend {
 		background-color: #cc6eff;
