@@ -17,18 +17,10 @@ name = "Сашка"
 tags = ["Teamlead", "Frontend"]
 photo = "/members/alex.png"
 isCaptain = true
-about = "TODO: пара слов о себе."
-stack = ["devicon:svelte", "devicon:typescript", "devicon:figma"]
-reachMe = "https://t.me/"
+about = "Всем привет, меня зовут Саша. Даже не знаю что тут написать, вообщем пока."
+stack = ["devicon:svelte", "devicon:flutter", "devicon:figma", "devicon:csharp"]
+reachMe = "https://t.me/axondee"
 # accent = "#ffa0c1"   # необязательно: переопределить цвет карточки
-
-[[members]]
-name = "Артём"
-tags = ["Backend", "Frontend"]
-photo = "/members/artyom-o.png"
-about = "Играю в шахматы, пью пиво. Евелина — люблю тебя!"
-stack = ["devicon:flutter", "devicon:dart", "devicon:figma", "devicon:firebase"]
-reachMe = "https://t.me/"
 
 [[members]]
 name = "Илья"
