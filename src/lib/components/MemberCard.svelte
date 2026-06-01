@@ -234,6 +234,10 @@
 
 	/* ── Кнопка reach me + пиксельное замостение ─────── */
 	.reach {
+		/* Два едва различимых «чёрных» — мозаика тонкая, не лезет в глаза */
+		--px-1: #242424;
+		--px-2: #2f2f2f;
+
 		position: relative;
 		overflow: hidden;
 		margin-top: auto;
@@ -252,13 +256,13 @@
 		grid-template-rows: repeat(5, 1fr);
 	}
 	.px {
-		background: #8f8f8f;
+		background: var(--px-1);
 		opacity: 0;
 		transition: opacity 0.12s linear;
 		transition-delay: var(--d);
 	}
 	.px.light {
-		background: #c6c6c6;
+		background: var(--px-2);
 	}
 	.reach:hover .px,
 	.reach:focus-visible .px {

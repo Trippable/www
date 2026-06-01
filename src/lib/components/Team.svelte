@@ -1,65 +1,23 @@
 <script lang="ts">
 	import { asset } from '$app/paths';
 	import MemberCard from './MemberCard.svelte';
-
-	// Палитра акцентов (она же задаёт цвет тени и выезжающей плашки у карточки).
-	const palette = ['#ffa0c1', '#ffc73c', '#2d881a', '#77a1dd', '#ff5c33', '#cc6eff'];
+	import config from '$lib/data/members.toml';
 
 	type Member = {
 		name: string;
-		tags: string[];
+		tags?: string[];
 		photo: string;
 		isCaptain?: boolean;
 		about?: string;
 		stack?: string[];
 		reachMe?: string;
+		/** Необязательный персональный акцент; иначе берётся из palette по кругу. */
+		accent?: string;
 	};
+	type TeamConfig = { palette: string[]; members: Member[] };
 
-	// TODO(team): заполнить about / stack / reachMe реальными данными по каждому.
-	// Слаги иконок берутся с https://icon-sets.iconify.design (напр. 'devicon:flutter', 'logos:figma').
-	const members: Member[] = [
-		{
-			name: 'Сашка',
-			tags: ['Teamlead', 'Frontend'],
-			photo: asset('/members/alex.png'),
-			isCaptain: true,
-			about: 'TODO: пара слов о себе.',
-			stack: ['devicon:svelte', 'devicon:typescript', 'devicon:figma'],
-			reachMe: 'https://t.me/'
-		},
-		{
-			name: 'Артём',
-			tags: ['Backend', 'Frontend'],
-			photo: asset('/members/artyom-o.png'),
-			about: 'Играю в шахматы, пью пиво. Евелина — люблю тебя!',
-			stack: ['devicon:flutter', 'devicon:dart', 'devicon:figma', 'devicon:firebase'],
-			reachMe: 'https://t.me/'
-		},
-		{
-			name: 'Илья',
-			tags: ['Deploy'],
-			photo: asset('/members/iliya.png'),
-			about: 'TODO: пара слов о себе.',
-			stack: ['devicon:docker', 'devicon:nginx', 'devicon:linux'],
-			reachMe: 'https://t.me/'
-		},
-		{
-			name: 'Лёня',
-			tags: ['Backend', 'Database'],
-			photo: asset('/members/lenya.jpeg'),
-			about: 'TODO: пара слов о себе.',
-			stack: ['devicon:postgresql', 'devicon:python', 'devicon:redis'],
-			reachMe: 'https://t.me/'
-		},
-		{
-			name: 'Тёмыч',
-			tags: ['Architect'],
-			photo: asset('/members/artyom-s.jpeg'),
-			about: 'TODO: пара слов о себе.',
-			stack: ['devicon:go', 'devicon:kubernetes', 'devicon:grafana'],
-			reachMe: 'https://t.me/'
-		}
-	];
+	// Данные команды живут в src/lib/data/members.toml и парсятся при сборке.
+	const { palette, members } = config as TeamConfig;
 </script>
 
 <div class="wrapper__container" id="team">
@@ -71,8 +29,8 @@
 				<MemberCard
 					name={member.name}
 					tags={member.tags}
-					photo={member.photo}
-					accent={palette[i % palette.length]}
+					photo={asset(member.photo)}
+					accent={member.accent ?? palette[i % palette.length]}
 					isCaptain={member.isCaptain}
 					about={member.about}
 					stack={member.stack}
