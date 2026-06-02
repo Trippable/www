@@ -23,14 +23,6 @@ reachMe = "https://t.me/axondee"
 # accent = "#ffa0c1"   # необязательно: переопределить цвет карточки
 
 [[members]]
-name = "Илья"
-tags = ["Deploy"]
-photo = "/members/iliya.png"
-about = "TODO: пара слов о себе."
-stack = ["devicon:docker", "devicon:nginx", "devicon:linux"]
-reachMe = "https://t.me/"
-
-[[members]]
 name = "Лёня"
 tags = ["Backend", "Database"]
 photo = "/members/lenya.jpeg"
@@ -45,3 +37,53 @@ photo = "/members/artyom-s.jpeg"
 about = "TODO: пара слов о себе."
 stack = ["devicon:go", "devicon:kubernetes", "devicon:grafana"]
 reachMe = "https://t.me/"
+
+[[members]]
+name = "Илья"
+tags = ["Deploy"]
+photo = "/members/iliya.png"
+about = "TODO: пара слов о себе."
+stack = ["devicon:docker", "devicon:nginx", "devicon:linux"]
+reachMe = "https://t.me/"
+
+[[members]]
+name = "Саша Линукс"
+tags = ["Backend"]
+photo = "/members/xirzo.jpeg"
+about = "Просто нереально спасибо за огромные и качественные ревью. Помогал команде не жалея себя. Даже подключил анализатор, который на время похоронил мастер."
+stack = ["devicon:csharp", "devicon:linux"]
+reachMe = "https://t.me/alexeybismus"
+
+
+[[members]]
+name = "Лёша"
+tags = ["Flutter"]
+photo = "/members/leshya_bismus.png"
+about = "Люблю флаттер, и вообще-то крутой парень. Все меня в команде любят, а я вот нн.. ладно. тоже."
+stack = ["devicon:flutter", "devicon:dart", "devicon:linux"]
+reachMe = "https://t.me/alexeybismus"
+
+[[members]]
+name = "Андрей"
+tags = ["Support"]
+photo = "/members/andrey_kudlis.jpeg"
+about = "Не то что спасибо, а огромнейшее спасибо за возможность продолжать заниматься команде любимым делом и помогать нереальными инсайтами. Андрей - это не просто лектор, это поддержка и тепло."
+stack = []
+reachMe = "https://t.me/andreykudlis"
+
+[[members]]
+name = "Юлия Игоревна"
+tags = ["Support"]
+photo = "/members/yulia_igorevna.jpeg"
+about = "Дисциплинарный прут нашей команды. Все всегда переживали успеем мы выполнить работу в дедлайн и кусали кулачки. Именно благодаря ей мы все успели!"
+stack = []
+reachMe = "https://t.me/J88588678"
+
+[[members]]
+name = "Н.Д. Пригодич"
+tags = ["Support"]
+photo = "/members/nikita_dmitrievich.jpeg"
+about = "Помог команде при старте, дал четкий ориентир и поддержку. Очень ценим его советы, спасибо Никита Дмитриевич!"
+stack = []
+reachMe = "https://t.me/Nikita_Prigodich"
+
