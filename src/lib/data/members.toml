@@ -27,7 +27,7 @@ name = "Лёня"
 tags = ["Backend", "Database"]
 photo = "/members/lenya.jpeg"
 about = "Это я и я делаю бэк. Все что не бэк я тоже делаю, не знаю как так получилось"
-stack = ["devicon:postgresql", "devicon:csharp", "devicon:apachekafka"]
+stack = ["devicon:postgresql", "devicon:csharp", "devicon:archlinux", "devicon:bash"]
 reachMe = "https://t.me/A1binoc"
 
 [[members]]
