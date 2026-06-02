@@ -34,9 +34,9 @@ reachMe = "https://t.me/"
 name = "Тёмыч"
 tags = ["Architect"]
 photo = "/members/artyom-s.jpeg"
-about = "TODO: пара слов о себе."
-stack = ["devicon:go", "devicon:kubernetes", "devicon:grafana"]
-reachMe = "https://t.me/"
+about = "Это работает. Не знаю почему, но лучше это не трогать"
+stack = ["devicon:debian", "devicon:aiassistant", "devicon:bash", "devicon:androidstudio"]
+reachMe = "https://t.me/hardduckling"
 
 [[members]]
 name = "Илья"
