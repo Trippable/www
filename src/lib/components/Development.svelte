@@ -47,7 +47,7 @@
 				'Create a stable, functional, ready to stay face anything - computer machine.',
 				true
 			)}
-			{@render block('3/ Feature enrichment', 'Complete the system to create a MPV project.', true)}
+			{@render block('3/ Feature enrichment', 'Complete the system to create a MVP project.', true)}
 			{@render block(
 				'4/ Beta testing',
 				'Take the project ready to production phase. Debug and optimize.',

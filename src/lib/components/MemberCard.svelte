@@ -35,7 +35,7 @@
 		accent = '#77a1dd',
 		isCaptain = false,
 		about = '',
-		aboutTitle = 'Вообщем',
+		aboutTitle = 'Вобщем',
 		aboutNote = '(и целом)',
 		stack = [],
 		stackTitle = 'Стек',
