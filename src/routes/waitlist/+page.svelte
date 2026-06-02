@@ -112,7 +112,8 @@
 						{#if devConfirmUrl}
 							<p class="devhint">
 								dev-режим: подтвердить вручную →
-								<a href={devConfirmUrl}>{devConfirmUrl}</a>
+								<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+								<a rel="external" href={devConfirmUrl}>{devConfirmUrl}</a>
 							</p>
 						{/if}
 						<button
@@ -156,7 +157,8 @@
 			</p>
 
 			<div class="download">
-				<a class="cta big" href={downloadUrl}>↓ скачать .apk</a>
+				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+				<a class="cta big" rel="external" href={downloadUrl}>↓ скачать .apk</a>
 				<p class="fineprint">
 					Android · загрузка с tripovik.ru · ссылка персональная, не делись ею.
 				</p>
