@@ -26,9 +26,9 @@ reachMe = "https://t.me/axondee"
 name = "Лёня"
 tags = ["Backend", "Database"]
 photo = "/members/lenya.jpeg"
-about = "TODO: пара слов о себе."
-stack = ["devicon:postgresql", "devicon:python", "devicon:redis"]
-reachMe = "https://t.me/"
+about = "Это я и я делаю бэк. Все что не бэк я тоже делаю, не знаю как так получилось"
+stack = ["devicon:postgresql", "devicon:csharp", "devicon:archlinux", "devicon:bash"]
+reachMe = "https://t.me/A1binoc"
 
 [[members]]
 name = "Тёмыч"
