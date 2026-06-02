@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { API_URL } from '$lib/config.js';
 
 	type Mode = 'join' | 'confirmed';
@@ -79,23 +79,25 @@
 	<div class="vignette" aria-hidden="true"></div>
 
 	<header class="top">
-		<a class="brand" href={`${base}/`}>tripovik<span class="caret">_</span></a>
-		<a class="back" href={`${base}/`}>← на сайт</a>
+		<a class="brand" href={resolve('/')}>tripovik<span class="caret">_</span></a>
+		<a class="back" href={resolve('/')}>← на сайт</a>
 	</header>
 
 	<main class="main">
 		{#if mode === 'join'}
-			<p class="kicker">// early access · ранний дистрибут</p>
+			<p class="kicker">// early access · ранний доступ</p>
 			<h1 class="title">РАННИЙ<br />ДОСТУП</h1>
 			<p class="lead">
-				Мы раздаём приложение <b>tripovik</b> ограниченному кругу первых пользователей. Оставь почту —
-				пришлём ссылку для подтверждения, а после ты сможешь скачать <span class="mono">.apk</span> прямо
-				с нашего сайта.
+				Мы раздаём приложение <b>tripovik</b> ограниченному кругу первых пользователей. Оставь почту
+				— пришлём ссылку для подтверждения, а после ты сможешь скачать
+				<span class="mono">.apk</span> прямо с нашего сайта.
 			</p>
 
 			<ul class="bullets">
 				<li><span class="mark">▸</span> приоритетная сборка раньше всех</li>
-				<li><span class="mark">▸</span> безопасная загрузка с tripovik, без GitHub</li>
+				<li>
+					<span class="mark">▸</span> мы подготовили уникальные мемные фичи, которые будут только в пре-релизе
+				</li>
 				<li><span class="mark">▸</span> прямое влияние на то, каким станет продукт</li>
 			</ul>
 
@@ -110,7 +112,8 @@
 						{#if devConfirmUrl}
 							<p class="devhint">
 								dev-режим: подтвердить вручную →
-								<a href={devConfirmUrl}>{devConfirmUrl}</a>
+								<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+								<a rel="external" href={devConfirmUrl}>{devConfirmUrl}</a>
 							</p>
 						{/if}
 						<button
@@ -154,7 +157,8 @@
 			</p>
 
 			<div class="download">
-				<a class="cta big" href={downloadUrl}>↓ скачать .apk</a>
+				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+				<a class="cta big" rel="external" href={downloadUrl}>↓ скачать .apk</a>
 				<p class="fineprint">
 					Android · загрузка с tripovik.ru · ссылка персональная, не делись ею.
 				</p>
@@ -163,7 +167,7 @@
 	</main>
 
 	<footer class="foot">
-		<span class="mono">tripovik © early distribution</span>
+		<span class="mono">tripovik early distribution!</span>
 	</footer>
 </div>
 
@@ -173,8 +177,7 @@
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
-		background:
-			radial-gradient(1200px 600px at 50% -10%, #15181f 0%, #0a0b0f 55%, #07080b 100%);
+		background: radial-gradient(1200px 600px at 50% -10%, #15181f 0%, #0a0b0f 55%, #07080b 100%);
 		color: #e7e9ee;
 		overflow: hidden;
 	}

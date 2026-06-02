@@ -1,5 +1,5 @@
 <script>
-	import { asset } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 </script>
 
 <div class="wrapper__container" id="preview">
@@ -17,7 +17,9 @@
 				</div>
 				<span>our codebase</span>
 			</button>
-			<button class="waitlist">join waitlist</button>
+			<button class="waitlist" onclick={() => (location.href = resolve('/waitlist'))}
+				>join waitlist</button
+			>
 		</div>
 	</div>
 </div>

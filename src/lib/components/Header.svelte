@@ -1,5 +1,5 @@
 <script>
-	import { asset, base } from '$app/paths';
+	import { asset } from '$app/paths';
 </script>
 
 <header id="header">
@@ -12,7 +12,6 @@
 			<a href="#development">Development</a>
 			<a href="#contribution">Contribution</a>
 			<a href="#team">Team</a>
-			<a class="waitlist" href={`${base}/waitlist`}>Ранний доступ</a>
 		</div>
 	</div>
 </header>
@@ -68,23 +67,6 @@
 	}
 	.links a:active {
 		transform: scale(0.9);
-	}
-
-	.links a.waitlist {
-		padding: 4px 16px;
-		border: 2px solid var(--color-primary);
-		border-radius: 999px;
-		background: var(--color-primary);
-		color: #fff;
-		transition:
-			transform 0.2s var(--transition-timing-function),
-			opacity 0.2s;
-	}
-	.links a.waitlist:hover {
-		opacity: 0.85;
-	}
-	.links a.waitlist::after {
-		display: none;
 	}
 
 	@media (min-width: 1440px) {
