@@ -42,7 +42,7 @@ reachMe = "https://t.me/hardduckling"
 name = "Илья"
 tags = ["Deploy"]
 photo = "/members/iliya.png"
-about = "TODO: пара слов о себе."
+about = "Тыщ тыщ, делаю деплой, миграции накатываются, патрони робит!"
 stack = ["devicon:docker", "devicon:nginx", "devicon:linux"]
 reachMe = "https://t.me/"
 
